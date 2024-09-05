@@ -8,8 +8,20 @@ public class Lab1 {
 	*/
 	   public static int squares(int n)
 	   {
-	   
-	      return 0;  
+		  int square = 0;
+		  if (n < 0)
+		  {
+			  square = -1;
+		  }
+		  
+		  else
+		  {
+			  for(int i = 0; i < n+1; i++) 
+			  {
+				  square = square + i*i;
+			  }
+		  }
+	      return square;  
 	   
 	   }
 
@@ -22,8 +34,25 @@ public class Lab1 {
 	*/
 	   public static int maxIndex(int array[],int len)
 	   {
-   
-	      return 0;
+		  int largest_num = 0;
+		  int index_pos = 0;
+		  if(len <= 0)
+		  {
+			  index_pos = -1;
+		  }
+		  
+		  else
+		  {
+			  for(int i = 0; i < len; i++)
+			  {
+				  if(array[i] > largest_num) {
+					  largest_num = array[i];
+					  index_pos = i;
+				  }
+				  
+			  }
+		  }
+	      return index_pos;
 	   }
 
 	/**
@@ -34,8 +63,15 @@ public class Lab1 {
 	*/
 	   public static boolean seek(int array[],int len,int target)
 	   {
-   
-	      return false;      
+		  boolean has_target = false;
+		  for(int i = 0; i < len; i ++)
+		  {
+			  if(array[i] == target)
+			  {
+				  has_target = true;
+			  }
+		  }
+	      return has_target;      
 	  	
 	      
 	   }
@@ -51,7 +87,30 @@ public class Lab1 {
 	*/
 	   public static int fib(int n)
 	   {
-	      return 0;
+		  int fib = 1;
+		  int hold = 0;
+		  if(n < 1)
+		  {
+			  fib = 0;
+		  }
+		  if(n == 1 || n == 2)
+		  {
+			  return 1;
+		  }
+		  else
+		  {
+			  for(int i = 0; i < n-2; i++)
+		  	  {
+				  hold = fib-hold;
+			  /*
+			  if(fib = 2)
+			  {
+				hold = 1  ;
+			  }*/
+				  fib = fib + hold;
+		  	  }
+		  }
+	      return fib;
 	   }
 
 }
